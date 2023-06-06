@@ -1,26 +1,29 @@
 import { Component } from "react";
-import { Statistic } from './Statistic/Statistic';
-import { Section } from './Section/Section';
-import { Feedback } from './Feedback/Feedback';
-import { Notification } from './Notification/Notification';
-import css from './App.css';
+import { Statistic } from '../Statistic/Statistic';
+import { Section } from '../Section/Section';
+import { Feedback } from '../Feedback/Feedback';
+import { Notification } from '../Notification/Notification';
+import css from './App.module.css';
 
 export class App extends Component{
+  constructor(good,neutral,bad){
+    super();
+    this.good=good;
+    this.neutral= neutral;
+    this.bad =bad;
+   }
 
-  state = {
+   state = {
     good: 0,
     neutral: 0,
     bad: 0
   }
-
+ 
   incrementValue = (e) => {
-
       this.setState(prevState => {
         return { [e] : prevState[e] + 1 };
       });
-    
-
-  }
+  };
     
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;

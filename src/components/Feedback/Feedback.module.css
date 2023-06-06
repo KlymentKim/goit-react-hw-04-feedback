@@ -1,5 +1,6 @@
 .buttonGroup{
     display: flex;
+    justify-content: center;
     gap: 3px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -8,7 +9,9 @@
 .button{
     height: 35px;
     width: 90px;
-    background-color: rgb(6, 185, 87);
+    background-color: #0093E9;
+    background-image: linear-gradient(301deg, #0093E9 11%, #80D0C7 50%, #ffffff 100%);
+
     border: none;
     border-radius: 5px;
     font-weight: 600;
@@ -16,7 +19,6 @@
 }
 
 .button:hover{
-    background-color: rgb(197, 127, 23);
     color: rgb(242, 247, 247);
     scale: 1.2;
 }
