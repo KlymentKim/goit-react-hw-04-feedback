@@ -1,0 +1,7 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    outline: 2px solid tomato;
+}

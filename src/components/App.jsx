@@ -3,7 +3,7 @@ import { Statistic } from './Statistic/Statistic';
 import { Section } from './Section/Section';
 import { Feedback } from "./Feedback/Feedback";
 import { Notification } from './Notification/Notification';
-
+import css from './App.css';
 
 export class App extends Component{
 
@@ -38,25 +38,26 @@ export class App extends Component{
   
   render () { 
     return (
-      <Section title="Please leave your feedback:">
-      <Feedback
-        options={Object.keys(this.state)}
-        onLeaveFeedback={this.incrementValue}/>
+      <div className={css.wrapper}>
+          <Section title="Please leave your feedback:">
+        <Feedback
+          options={Object.keys(this.state)}
+          onLeaveFeedback={this.incrementValue}/>
+        
+        {this.countTotalFeedback() 
+          ?  ( <Statistic 
+              good={this.state.good} 
+              neutral={this.state.neutral} 
+              bad={this.state.bad} 
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage(this.countTotalFeedback())}/>
+              ) : (
+                <Notification message="There is no feedback yet!" />
+                )
+              }
+         </Section>
+      </div>
       
-      {this.countTotalFeedback() 
-        ?  ( <Statistic 
-            good={this.state.good} 
-            neutral={this.state.neutral} 
-            bad={this.state.bad} 
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage(this.countTotalFeedback())}/>
-            ) : (
-              <Notification message="There is no feedback yet!" />
-              )
-            }
-
-
-      </Section>
     )
   }
 }
