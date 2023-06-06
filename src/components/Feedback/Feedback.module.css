@@ -1,6 +1,6 @@
 .buttonGroup{
     display: flex;
-    gap: 5px;
+    gap: 3px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
