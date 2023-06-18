@@ -1,23 +1,22 @@
 import PropTypes from 'prop-types';
-import css from './Statistic.module.css';
+import { H1title, Ptext } from './Statistic.styled';
+
 
 export const Statistic = ({ good,neutral,bad,total,positivePercentage}) => {
 
     return (
         <>
-        <h1 className={css.Statistic}> Statistic </h1>
+        <H1title>Statistic</H1title>
 
-        <p className={css.Stattext}>Good: {good}</p>
-        <p className={css.Stattext}>Neutral: {neutral}</p>
-        <p className={css.Stattext}>Bad: {bad}</p>
-        <p className={css.Stattext}>Total: {total}</p>
-        {total > 0 && (  <p className={css.Stattext}>Positive feedback: {positivePercentage} %</p> 
+        <Ptext>Good: {good}</Ptext>
+        <Ptext>Neutral: {neutral}</Ptext>
+        <Ptext>Bad: {bad}</Ptext>
+        <Ptext>Total: {total}</Ptext>
+        {total > 0 && (  <Ptext>Positive feedback: {positivePercentage} %</Ptext> 
       )}
         </>
     ); 
     }
-
-
 
 Statistic.propTypes = {
     props:  PropTypes.objectOf(PropTypes.string),
